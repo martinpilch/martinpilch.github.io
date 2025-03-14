@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Pilch - iOS Developer</title>
+    <style>
+        :root {
+            --swift-orange: #f05138;
+            --swift-dark: #333333;
+            --swift-light: #f7f7f7;
+            --swift-gray: #8a8a8a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--swift-dark);
+            background-color: white;
+        }
+        
+        header {
+            background-color: var(--swift-light);
+            color: var(--swift-dark);
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--swift-dark);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--swift-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 60px;
+            background-color: var(--swift-orange);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--swift-dark);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--swift-orange);
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--swift-orange);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #d83f1d;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--swift-orange);
+            color: var(--swift-orange);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--swift-orange);
+            color: white;
+        }
+        
+        .experience-item {
+            margin-bottom: 2.5rem;
+            background-color: var(--swift-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .company {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .date {
+            color: var(--swift-gray);
+            font-style: italic;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .skill-tag {
+            background-color: rgba(240, 81, 56, 0.1);
+            color: var(--swift-orange);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-right: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .skill-tag:hover {
+            background-color: rgba(240, 81, 56, 0.2);
+        }
+        
+        footer {
+            background-color: var(--swift-dark);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--swift-orange);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--swift-light);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .contact-item a {
+            color: var(--swift-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-item a:hover {
+            color: var(--swift-orange);
+        }
+        
+        .contact-item span {
+            margin-right: 0.5rem;
+            color: var(--swift-orange);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .company-date {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date {
+                margin-top: 0.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Martin Pilch</h1>
+            <p>Lead iOS Developer | Swift & SwiftUI Expert | Application Architecture Specialist</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <a href="mailto:me@martinpilch.com">me@martinpilch.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://www.linkedin.com/in/pilchmartin/" target="_blank">linkedin.com/in/pilchmartin</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm Martin Pilch, a Lead iOS Developer specializing in building secure, scalable applications for millions of users. With extensive expertise in Swift, SwiftUI, and application architecture, I've worked across digital health, video streaming platforms, and fintech industries to deliver high-quality, user-centered mobile experiences.</p>
+            <p>Throughout my career, I've focused on developing performant applications while maintaining code quality and fostering team growth. I'm passionate about creating impactful digital products that provide real value to users.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">Swift</span>
+                <span class="skill-tag">SwiftUI</span>
+                <span class="skill-tag">UIKit</span>
+                <span class="skill-tag">iOS</span>
+                <span class="skill-tag">iPadOS</span>
+                <span class="skill-tag">watchOS</span>
+                <span class="skill-tag">MVVM</span>
+                <span class="skill-tag">Clean Architecture</span>
+                <span class="skill-tag">Unit Testing</span>
+                <span class="skill-tag">Performance Optimization</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">App Store Deployment</span>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company-date">
+                    <span class="company">MindMed.co</span>
+                    <span class="date">2021 - 2024</span>
+                </div>
+                <h3>Lead iOS Developer</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Led the development of apps for iOS, iPadOS, and watchOS, designed to assist therapists in guiding patients through psychedelic-assisted therapy sessions, focusing on user-centric design and high-performance</li>
+                    <li>Played a key role in increasing product velocity, working closely with a small, high-performing engineering team to deliver impactful features under tight deadlines</li>
+                    <li>Ensured the quality and reliability of the app by implementing robust unit tests, addressing edge cases, and maintaining the app's performance over time</li>
+                    <li>Mentored junior engineers, fostering a culture of learning and growth, while continuously pushing for code excellence and a high standard of software quality</li>
+                </ul>
+                <div class="skills">
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">SwiftUI</span>
+                    <span class="skill-tag">iOS</span>
+                    <span class="skill-tag">iPadOS</span>
+                    <span class="skill-tag">watchOS</span>
+                    <span class="skill-tag">Unit Testing</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="company-date">
+                    <span class="company">HealthMode</span>
+                    <span class="date">2020 - 2021</span>
+                </div>
+                <h3>iOS Developer</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Spearheaded the development of a high-quality iOS application designed to monitor and optimize mental health and wellness, focusing on performance, usability, and reliability across iOS and iPadOS platforms</li>
+                    <li>Collaborated closely with a cross-functional team to define and implement innovative features that enhanced user engagement and provided real-time mental health insights, contributing to positive user experiences</li>
+                    <li>Played a key role in improving the product velocity by streamlining development processes, introducing automated testing, and maintaining a high standard of code across the app</li>
+                    <li><i>Acquired by MindMed Inc.</i></li>
+                </ul>
+                <div class="skills">
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">iOS</span>
+                    <span class="skill-tag">iPadOS</span>
+                    <span class="skill-tag">Automated Testing</span>
+                    <span class="skill-tag">Digital Health</span>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="company-date">
+                    <span class="company">iflix.com</span>
+                    <span class="date">2017 - 2019</span>
+                </div>
+                <h3>iOS Developer</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Led the development of a high-performance iOS app used by millions of users, optimizing streaming features for reliability, scalability, and user experience across devices</li>
+                    <li>Worked closely with a team to rapidly ship new features, enhancing product velocity and ensuring consistent code quality</li>
+                    <li>Owned key app features, integrating video streaming technologies to improve content delivery and playback speed</li>
+                    <li>Drove continuous improvement through automated testing, bug fixing, and performance tuning, leading to better app stability and user satisfaction</li>
+                    <li><i>Acquired by Tencent</i></li>
+                </ul>
+                <div class="skills">
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">iOS</span>
+                    <span class="skill-tag">Video Streaming</span>
+                    <span class="skill-tag">Performance Optimization</span>
+                    <span class="skill-tag">Continuous Integration</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Martin Pilch. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
