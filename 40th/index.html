@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oslava 40. narozenin</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d4af37; /* Zlatá barva pro 40. narozeniny */
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 20px;
+            background-color: #ccc; /* Placeholder než dodáte foto */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 { margin-bottom: 10px; font-size: 2.5em; }
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
+
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .map-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b8962d;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th { background-color: #eee; }
+
+        footer {
+            padding: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="vase-foto.jpg" alt="Moje maličkost" class="profile-photo">
+        <h1>Oslava mých 40. narozenin</h1>
+        <p>24. ledna 2026 | Orlovna Šlapanice</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="info-box">
+            <h2>Pozvání</h2>
+            <p>
+                Čas letí jako bláznivý, a tak je na čase se na chvíli zastavit a společně to oslavit. 
+                Čtyřicítka je jen číslo, ale dobrá společnost je základ. Přijďte si se mnou užít 
+                odpoledne plné jídla, pití a dobré nálady!
+            </p>
+        </section>
+
+        <section class="info-box">
+            <h2>Kdy a kde?</h2>
+            <p><strong>Datum:</strong> Sobota 24. ledna 2026</p>
+            <p><strong>Čas:</strong> Startujeme přesně v 15:00</p>
+            <p><strong>Místo:</strong> Orlovna Šlapanice (Masarykovo nám. 248/15)</p>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2614.93175440623!2d16.724659276884615!3d49.16859667931985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471291660990479d%3A0xc682915b0959074a!2zT3Jsb3ZuYSBTbGFwYW5pY2U!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz" 
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <a href="https://mapy.cz/s/losemuzusu" target="_blank" class="btn">Otevřít navigaci (Mapy.cz)</a>
+        </section>
+
+        <section class="info-box">
+            <h2>Ubytování v okolí</h2>
+            <p>Pokud plánujete zůstat přes noc, zde jsou možnosti v blízkosti:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Název</th>
+                        <th>Vzdálenost</th>
+                        <th>Kontakt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Penzion Šlapanice</td>
+                        <td>300 m (pěšky)</td>
+                        <td><a href="https://www.penzionslapanice.cz" target="_blank">Web</a></td>
+                    </tr>
+                    <tr>
+                        <td>Hotel Areál (Slatina)</td>
+                        <td>3.5 km (auto/bus)</td>
+                        <td><a href="https://www.hotelareal.cz" target="_blank">Web</a></td>
+                    </tr>
+                    <tr>
+                        <td>Ostatní v Brně</td>
+                        <td>10 min autem</td>
+                        <td><a href="https://www.booking.com" target="_blank">Booking.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        Těším se na vás!<br>
+        Prosím o potvrzení účasti do konce roku 2025.
+    </footer>
+
+</body>
+</html>
